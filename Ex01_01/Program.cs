@@ -116,18 +116,18 @@ The average number of '1' digits in the binary number is {1}.",
 
         private static int convertBinaryNumberToDec(string i_binaryNumber)
         {
-            double decNumber = 0;
+            int decNumber = 0;
             int currentDigit;
             for (int i = 0; i < s_NumberLen; i++)
             {
                 currentDigit = charToInt(i_binaryNumber[s_NumberLen - i - 1]);
                 if (currentDigit == charToInt((char)eBinaryDigits.One))
                 {
-                    decNumber += Math.Pow(2, i);
+                    decNumber += (int)Math.Pow(2, i);
                 }
             }
 
-            return ((int)decNumber);
+            return (decNumber);
         }
 
         private static int amountOfExpTwoNumbers(int[] i_decNumber)
@@ -204,7 +204,7 @@ The average number of '1' digits in the binary number is {1}.",
             printAmountOfPlindromNumbers(countOfPlindromNumbers);
         }
 
-        private static bool isDecNumberDigitsIncrease(int i_decNumber)
+        private static bool isDecimalNumberDigitsIncrease(int i_decNumber)
         {
             bool v_NumberDigitsIncrease = true;
             int lastModuloTen = i_decNumber % 10;
@@ -227,7 +227,7 @@ The average number of '1' digits in the binary number is {1}.",
             int counterOfIncreaseDigitsNumbers = 0;
             for (int i = 0; i < s_NumberOfSeries; i++)
             {
-                if (isDecNumberDigitsIncrease(i_decNumber[i]))
+                if (isDecimalNumberDigitsIncrease(i_decNumber[i]))
                 {
                     counterOfIncreaseDigitsNumbers++;
                 }
