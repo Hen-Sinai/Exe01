@@ -1,0 +1,6 @@
+C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_05\obj\Debug\Ex01_05.csprojAssemblyReference.cache
+C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_05\obj\Debug\Ex01_05.csproj.CoreCompileInputs.cache
+C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_05\bin\Debug\Ex01_05.exe
+C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_05\bin\Debug\Ex01_05.pdb
+C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_05\obj\Debug\Ex01_05.exe
+C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_05\obj\Debug\Ex01_05.pdb
