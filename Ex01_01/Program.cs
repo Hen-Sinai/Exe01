@@ -24,7 +24,6 @@ namespace Ex01_01
             int[] decimalNumArry = parseStringArrToIntArr(binaryNumArry);
             avgDigitApperiences(binaryNumArry);
             expOfTwoNumbers(decimalNumArry);
-            increaseDigitsNumbers(decimalNumArry);
             plindromNumbers(decimalNumArry);
             minNumber(decimalNumArry);
             maxNumber(decimalNumArry);
@@ -221,35 +220,6 @@ The average number of '1' digits in the binary number is {1}.",
             }
 
             return v_NumberDigitsIncrease;
-        }
-
-        private static int amountOfIncreaseDigitsNumbers(int[] i_decNumber)
-        {
-            int counterOfIncreaseDigitsNumbers = 0;
-            for (int i = 0; i < s_NumberOfSeries; i++)
-            {
-                if (isDecimalNumberDigitsIncrease(i_decNumber[i]))
-                {
-                    counterOfIncreaseDigitsNumbers++;
-                }
-            }
-
-            return counterOfIncreaseDigitsNumbers;
-        }
-
-        private static void printAmountOfIncreaseDigitsNumbers(int i_amountOfIncreaseDigitsNumbers)
-        {
-            string msg;
-            msg = string.Format(
-              "The amount of increase digits numbers are: {0}", i_amountOfIncreaseDigitsNumbers);
-            Console.WriteLine(msg);
-        }
-
-        private static void increaseDigitsNumbers(int[] i_decNumber)
-        {
-            int counterOfIncreaseDigitsNumbers;
-            counterOfIncreaseDigitsNumbers = amountOfIncreaseDigitsNumbers(i_decNumber);
-            printAmountOfIncreaseDigitsNumbers(counterOfIncreaseDigitsNumbers);
         }
 
         private static int[] parseStringArrToIntArr(string[] i_Numbers)
