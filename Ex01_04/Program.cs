@@ -48,7 +48,7 @@ namespace Ex01_04
                 isStringContainDigit = checkStringContainDigit(i_str);
                 isStringContainLetter = checkStringContainLetter(i_str);
                 isStringContainSymbol = checkStringContainSymbol(i_str);
-                v_validStr = !(isStringContainDigit && isStringContainLetter) && !isStringContainSymbol;
+                v_validStr = !(isStringContainDigit && isStringContainLetter) && !isStringContainSymbol && i_str.Length == s_StringLen;
             }
 
             return v_validStr;
@@ -60,7 +60,7 @@ namespace Ex01_04
             foreach (char character in i_str)
             {
                 isCharDigit = int.TryParse(character.ToString(), out int number);
-                if (!isCharDigit)
+                if (isCharDigit)
                 {
                     break;
                 }
@@ -75,7 +75,7 @@ namespace Ex01_04
             foreach (char character in i_str)
             {
                 isCharLetter = Char.IsLetter(character);
-                if (!isCharLetter)
+                if (isCharLetter)
                 {
                     break;
                 }
@@ -91,7 +91,7 @@ namespace Ex01_04
             {
                 isCharSymbol = !(Char.IsLetter(character)) &&
                     !int.TryParse(character.ToString(), out int number);
-                if (!isCharSymbol)
+                if (isCharSymbol)
                 {
                     break;
                 }
@@ -121,7 +121,7 @@ namespace Ex01_04
         {
             string msg;
             msg = string.Format(
-             "Is the number a polindrom: {0}", checkPolindrom(i_str, 0));
+             "Is the string a polindrom: {0}", checkPolindrom(i_str, 0));
             Console.WriteLine(msg);
         }
 

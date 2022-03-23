@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace Ex01_05
 {
     class Program
@@ -23,15 +22,15 @@ namespace Ex01_05
             string msg;
             msg =
                 string.Format(
-@"The smallest digit is: {0}.
-The average of the digits is: {1}.
-The amount of digits divided by two is: {2}.
-The amount of digits that are smaller from the unity digit is: {3}.",
+@"The smallest digit is: {0}
+The average of the digits is: {1}
+The amount of digits divided by two is: {2}
+The amount of digits that are smaller from the unity digit is: {3}",
                  minDigit, avgOfDigits, amountOfDigitsDividedByTwo, amountOfDigitsSmallerThanUnityDigit);
             Console.WriteLine(msg);
         }
 
-        private static char findMinDigit(string i_sevenDigits)
+        private static int findMinDigit(string i_sevenDigits)
         {
             char minDigit = i_sevenDigits[0];
             for (int i = 1; i < s_NumOfDigits; i++)
@@ -42,7 +41,7 @@ The amount of digits that are smaller from the unity digit is: {3}.",
                 }
             }
 
-            return minDigit;
+            return charToInt(minDigit);
         }
 
         private static string getSevenDigitsInput()
@@ -103,9 +102,9 @@ The amount of digits that are smaller from the unity digit is: {3}.",
 
         private static int countDigitsSmallerThanUnityDigit(string i_sevenDigits)
         {
-            int unityDigit = i_sevenDigits[0];
+            int unityDigit = i_sevenDigits[s_NumOfDigits - 1];
             int amountSmallerFromeUnity = 0;
-            for (int i = 1; i < s_NumOfDigits; i++)
+            for (int i = 0; i < s_NumOfDigits - 1; i++)
             {
                 if (i_sevenDigits[i] < unityDigit)
                 {
@@ -114,6 +113,11 @@ The amount of digits that are smaller from the unity digit is: {3}.",
             }
 
             return amountSmallerFromeUnity;
+        }
+
+        private static int charToInt(char i_char)
+        {
+            return (int)(i_char - '0');
         }
     }
 }
