@@ -5,6 +5,7 @@ namespace Ex01_04
     class Program
     {
         private static int s_StringLen = 8;
+
         static public void Main()
         {
             stringAnalyser();
@@ -56,9 +57,13 @@ namespace Ex01_04
         private static bool checkStringContainDigit(string i_str)
         {
             bool isCharDigit = false;
-            for (int i = 0; i < i_str.Length && !isCharDigit; i++)
+            foreach (char character in i_str)
             {
-                isCharDigit = int.TryParse(i_str[i].ToString(), out int number);
+                isCharDigit = int.TryParse(character.ToString(), out int number);
+                if (!isCharDigit)
+                {
+                    break;
+                }
             }
 
             return isCharDigit;
@@ -67,9 +72,13 @@ namespace Ex01_04
         private static bool checkStringContainLetter(string i_str)
         {
             bool isCharLetter = false;
-            for (int i = 0; i < i_str.Length && !isCharLetter; i++)
+            foreach (char character in i_str)
             {
-                isCharLetter = Char.IsLetter(i_str[i]); 
+                isCharLetter = Char.IsLetter(character);
+                if (!isCharLetter)
+                {
+                    break;
+                }
             }
 
             return isCharLetter;
@@ -78,10 +87,14 @@ namespace Ex01_04
         private static bool checkStringContainSymbol(string i_str)
         {
             bool isCharSymbol = false;
-            for (int i = 0; i < i_str.Length && !isCharSymbol; i++)
+            foreach (char character in i_str)
             {
-                isCharSymbol = !(Char.IsLetter(i_str[i])) &&
-                    !int.TryParse(i_str[i].ToString(), out int number);
+                isCharSymbol = !(Char.IsLetter(character)) &&
+                    !int.TryParse(character.ToString(), out int number);
+                if (!isCharSymbol)
+                {
+                    break;
+                }
             }
 
             return isCharSymbol;
@@ -115,7 +128,9 @@ namespace Ex01_04
         private static bool checkDividedByThree(string i_str)
         {
             int number;
-            return int.TryParse(i_str, out number) && number % 3 == 0;
+            bool isDIvidedByThree = int.TryParse(i_str, out number) && number % 3 == 0;
+            
+            return isDIvidedByThree;
         }
 
         private static void printIsDividedByThree(string i_str)
@@ -128,15 +143,18 @@ namespace Ex01_04
 
         private static bool checkLowercase(char i_letter)
         {
-            return i_letter == Char.ToLower(i_letter);
+            bool isLetterLowerCase;
+            isLetterLowerCase = i_letter == Char.ToLower(i_letter);
+
+            return isLetterLowerCase;
         }
 
         private static int countLowercaseLetters(string i_str)
         {
             int countLowerCaseLetters = 0;
-            for (int i = 0; i < i_str.Length; i++)
+            foreach (char character in i_str)
             {
-                if (checkLowercase(i_str[i]))
+                if (checkLowercase(character))
                 {
                     countLowerCaseLetters++;
                 }

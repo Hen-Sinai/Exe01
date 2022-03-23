@@ -56,9 +56,9 @@ namespace Ex01_01
             v_VaildNumber = i_binaryNumber.Length == s_NumberLen;
             if (v_VaildNumber)
             {
-                foreach (char currentDigit in i_binaryNumber)
+                foreach (char digit in i_binaryNumber)
                 {
-                    if (currentDigit != (char)eBinaryDigits.Zero && currentDigit != (char)eBinaryDigits.One)
+                    if (digit != (char)eBinaryDigits.Zero && digit != (char)eBinaryDigits.One)
                     {
                         v_VaildNumber = !v_VaildNumber;
                         break;
@@ -72,9 +72,9 @@ namespace Ex01_01
         private static int apperiencesOfZero(string i_binaryNumber)
         {
             int amountOfZeros = 0;
-            foreach (char currentDigit in i_binaryNumber)
+            foreach (char digit in i_binaryNumber)
             {
-                if (currentDigit == (char)eBinaryDigits.Zero)
+                if (digit == (char)eBinaryDigits.Zero)
                 {
                     amountOfZeros++;
                 }
@@ -115,7 +115,6 @@ The average number of '1' digits in the binary number is {1}.",
             calculateAvgDigitApperiences(i_binaryNumbers, out avgOfZeros, out avgOfOne);
             printAvgApperiences(avgOfZeros, avgOfOne);
         }
-
 
         private static int convertBinaryNumberToDec(string i_binaryNumber)
         {

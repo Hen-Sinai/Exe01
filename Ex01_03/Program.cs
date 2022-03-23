@@ -19,6 +19,7 @@ namespace Ex01_03
             {
                 Console.WriteLine("Wrong input, please enter another number");
             }
+
             return validHeight;
         }
 
@@ -32,6 +33,7 @@ namespace Ex01_03
             {
                 validHeight += 1;
             }
+
             Ex01_02.Program.GenerateHourGlassWithInput(hourGlassStr, k_FirstLevel, validHeight);
             Console.WriteLine(hourGlassStr);
         }

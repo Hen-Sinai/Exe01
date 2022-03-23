@@ -16,6 +16,10 @@ namespace Ex01_05
         {
             string sevenDigitsNum = getSevenDigitsInput();
             int sevenDigitsInt = int.Parse(sevenDigitsNum);
+            int minDigit = findMinDigit(sevenDigitsNum);
+            int amountOfDigitsDividedByTwo = countDigitsDividedByTwo(sevenDigitsInt);
+            int amountOfDigitsSmallerThanUnityDigit = countDigitsSmallerThanUnityDigit(sevenDigitsNum);
+            float avgOfDigits = findAvgDigits(sevenDigitsInt);
             string msg;
             msg =
                 string.Format(
@@ -23,8 +27,7 @@ namespace Ex01_05
 The average of the digits is: {1}.
 The amount of digits divided by two is: {2}.
 The amount of digits that are smaller from the unity digit is: {3}.",
-                 findMinDigit(sevenDigitsNum), findAvgDigits(sevenDigitsInt),
-                 amountOfDigitsDividedByTwo(sevenDigitsInt), amountOfDigitsSmallerThanUnityDigit(sevenDigitsNum));
+                 minDigit, avgOfDigits, amountOfDigitsDividedByTwo, amountOfDigitsSmallerThanUnityDigit);
             Console.WriteLine(msg);
         }
 
@@ -49,21 +52,22 @@ The amount of digits that are smaller from the unity digit is: {3}.",
             {
                 Console.WriteLine("Please enter a number with 7 digits");
                 sevenDigitsNummber = Console.ReadLine();
-            } while (!ValidSevenDigitsNum(sevenDigitsNummber));
+            } while (!validSevenDigitsNum(sevenDigitsNummber));
 
             return sevenDigitsNummber;
         }
 
-        private static bool ValidSevenDigitsNum(string i_number)
+        private static bool validSevenDigitsNum(string i_number)
         {
             int numberRes;
-            bool sevenDigitsNum = (i_number.Length == s_NumOfDigits &&
-                                        int.TryParse(i_number, out numberRes) && numberRes >= 0);
-            if (!sevenDigitsNum)
+            bool isSevenDigitsNumValid = i_number.Length == s_NumOfDigits &&
+                                        int.TryParse(i_number, out numberRes) && numberRes > 0;
+            if (!isSevenDigitsNumValid)
             {
                 Console.WriteLine("Wrong input, please enter another number");
             }
-            return sevenDigitsNum;
+
+            return isSevenDigitsNumValid;
         }
 
         private static float findAvgDigits(int i_sevenDigitsNum)
@@ -81,7 +85,7 @@ The amount of digits that are smaller from the unity digit is: {3}.",
             return digitsAvg;
         }
 
-        private static int amountOfDigitsDividedByTwo(int i_sevenDigits)
+        private static int countDigitsDividedByTwo(int i_sevenDigits)
         {
             int amountOfDigitsDividedBytwo = s_NumOfDigits;
             while (i_sevenDigits != 0)
@@ -90,13 +94,14 @@ The amount of digits that are smaller from the unity digit is: {3}.",
                 {
                     amountOfDigitsDividedBytwo--;
                 }
+
                 i_sevenDigits /= 10;
             }
 
             return amountOfDigitsDividedBytwo;
         }
 
-        private static int amountOfDigitsSmallerThanUnityDigit(string i_sevenDigits)
+        private static int countDigitsSmallerThanUnityDigit(string i_sevenDigits)
         {
             int unityDigit = i_sevenDigits[0];
             int amountSmallerFromeUnity = 0;
