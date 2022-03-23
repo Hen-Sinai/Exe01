@@ -31,15 +31,19 @@ namespace Ex01_01
 
         private static string[] getBinarySeriesInput()
         {
+            int numberIndex = 0;
             string[] binarySeriesArr = new string[s_NumberOfSeries];
             Console.WriteLine("Please enter 3 numbers");
-            for (int i = 0; i < s_NumberOfSeries; i++)
+            while (numberIndex != s_NumberOfSeries)
             {
-                binarySeriesArr[i] = Console.ReadLine();
-                if (!isBinaryNumberValid(binarySeriesArr[i]))
+                binarySeriesArr[numberIndex] = Console.ReadLine();
+                if (!isBinaryNumberValid(binarySeriesArr[numberIndex]))
                 {
-                    i--;
                     Console.WriteLine("Wrong input, please enter another number");
+                }
+                else
+                {
+                    numberIndex++;
                 }
             }
 
@@ -49,13 +53,11 @@ namespace Ex01_01
         private static bool isBinaryNumberValid(string i_binaryNumber)
         {
             bool v_VaildNumber;
-            char currentDigit;
             v_VaildNumber = i_binaryNumber.Length == s_NumberLen;
             if (v_VaildNumber)
             {
-                for (int i = 0; i < s_NumberLen; i++)
+                foreach (char currentDigit in i_binaryNumber)
                 {
-                    currentDigit = i_binaryNumber[i];
                     if (currentDigit != (char)eBinaryDigits.Zero && currentDigit != (char)eBinaryDigits.One)
                     {
                         v_VaildNumber = !v_VaildNumber;
@@ -70,9 +72,9 @@ namespace Ex01_01
         private static int apperiencesOfZero(string i_binaryNumber)
         {
             int amountOfZeros = 0;
-            for (int i = 0; i < s_NumberLen; i++)
+            foreach (char currentDigit in i_binaryNumber)
             {
-                if (i_binaryNumber[i] == (char)eBinaryDigits.One)
+                if (currentDigit == (char)eBinaryDigits.Zero)
                 {
                     amountOfZeros++;
                 }
@@ -81,15 +83,16 @@ namespace Ex01_01
             return amountOfZeros;
         }
 
-        private static void calculateAvgDigitApperiences(string[] i_binaryNumber, out float o_avgOfZeros, out float o_avgOfOne)
+        private static void calculateAvgDigitApperiences(string[] i_binaryNumbers, out float o_avgOfZeros, out float o_avgOfOne)
         {
             float amountOfZeros = 0;
             float amountOfOne;
             int k_AmountOfAllDigits = s_NumberOfSeries * s_NumberLen;
-            for (int i = 0; i < s_NumberOfSeries; i++)
+            foreach (string binaryNumber in i_binaryNumbers)
             {
-                amountOfZeros += apperiencesOfZero(i_binaryNumber[i]);
+                amountOfZeros += apperiencesOfZero(binaryNumber);
             }
+
             amountOfOne = k_AmountOfAllDigits - amountOfZeros;
             o_avgOfZeros = amountOfZeros / k_AmountOfAllDigits;
             o_avgOfOne = amountOfOne / k_AmountOfAllDigits;
@@ -106,10 +109,10 @@ The average number of '1' digits in the binary number is {1}.",
             Console.WriteLine(msg);
         }
 
-        private static void avgDigitApperiences(string[] i_binaryNumber)
+        private static void avgDigitApperiences(string[] i_binaryNumbers)
         {
             float avgOfZeros, avgOfOne;
-            calculateAvgDigitApperiences(i_binaryNumber, out avgOfZeros, out avgOfOne);
+            calculateAvgDigitApperiences(i_binaryNumbers, out avgOfZeros, out avgOfOne);
             printAvgApperiences(avgOfZeros, avgOfOne);
         }
 
@@ -130,12 +133,12 @@ The average number of '1' digits in the binary number is {1}.",
             return decNumber;
         }
 
-        private static int amountOfExpTwoNumbers(int[] i_decNumber)
+        private static int amountOfExpTwoNumbers(int[] i_decimalNumbers)
         {
             int counterOfExpOfTwoNumbers = 0;
-            for (int i = 0; i < s_NumberOfSeries; i++)
+            foreach (int binaryNumber in i_decimalNumbers)
             {
-                if (Math.Log(i_decNumber[i], 2) % 1 == 0)
+                if (Math.Log(binaryNumber, 2) % 1 == 0)
                 {
                     counterOfExpOfTwoNumbers++;
                 }
@@ -153,20 +156,20 @@ The average number of '1' digits in the binary number is {1}.",
             Console.WriteLine(msg);
         }
 
-        private static void expOfTwoNumbers(int[] i_decNumber)
+        private static void expOfTwoNumbers(int[] i_decNumbers)
         {
             int counterOfExpOfTwoNumbers;
-            counterOfExpOfTwoNumbers = amountOfExpTwoNumbers(i_decNumber);
+            counterOfExpOfTwoNumbers = amountOfExpTwoNumbers(i_decNumbers);
             printAmountOfExpTwoNumbers(counterOfExpOfTwoNumbers);
         }
 
-        private static bool isPolindrom(string i_decNumber)
+        private static bool isPolindrom(string i_decimalNumber)
         {
             bool v_polindrom = true;
-            int numberLen = i_decNumber.Length;
+            int numberLen = i_decimalNumber.Length;
             for (int i = 0; i < numberLen / 2 && v_polindrom; i++)
             {
-                if (i_decNumber[i] != i_decNumber[(numberLen - 1) - i * 2])
+                if (i_decimalNumber[i] != i_decimalNumber[(numberLen - 1) - i * 2])
                 {
                     v_polindrom = !v_polindrom;
                 }
@@ -175,12 +178,12 @@ The average number of '1' digits in the binary number is {1}.",
             return v_polindrom;
         }
 
-        private static int amountOfPlindromNumbers(int[] i_decNumber)
+        private static int amountOfPlindromNumbers(int[] i_decimalNumbers)
         {
             int counterOfPlindromNumbers = 0;
-            for (int i = 0; i < s_NumberOfSeries; i++)
+            foreach (int binaryNumber in i_decimalNumbers)
             {
-                if (isPolindrom(i_decNumber[i].ToString()))
+                if (isPolindrom(binaryNumber.ToString()))
                 {
                     counterOfPlindromNumbers++;
                 }
@@ -197,29 +200,11 @@ The average number of '1' digits in the binary number is {1}.",
             Console.WriteLine(msg);
         }
 
-        private static void plindromNumbers(int[] i_decNumber)
+        private static void plindromNumbers(int[] i_decNumbers)
         {
             int countOfPlindromNumbers;
-            countOfPlindromNumbers = amountOfPlindromNumbers(i_decNumber);
+            countOfPlindromNumbers = amountOfPlindromNumbers(i_decNumbers);
             printAmountOfPlindromNumbers(countOfPlindromNumbers);
-        }
-
-        private static bool isDecimalNumberDigitsIncrease(int i_decNumber)
-        {
-            bool v_NumberDigitsIncrease = true;
-            int lastModuloTen = i_decNumber % 10;
-            i_decNumber /= 10;
-            while (i_decNumber > 0 && v_NumberDigitsIncrease)
-            {
-                if (i_decNumber % 10 >= lastModuloTen)
-                {
-                    v_NumberDigitsIncrease = !v_NumberDigitsIncrease;
-                }
-                lastModuloTen = i_decNumber % 10;
-                i_decNumber /= 10;
-            }
-
-            return v_NumberDigitsIncrease;
         }
 
         private static int[] parseStringArrToIntArr(string[] i_Numbers)
