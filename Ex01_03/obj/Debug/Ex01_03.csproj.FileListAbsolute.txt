@@ -7,3 +7,12 @@ C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex
 C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_03\obj\Debug\Ex01_03.csproj.CopyComplete
 C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_03\obj\Debug\Ex01_03.exe
 C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_03\obj\Debug\Ex01_03.pdb
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_03\bin\Debug\Ex01_03.exe
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_03\bin\Debug\Ex01_03.pdb
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_03\bin\Debug\Ex01_02.dll
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_03\bin\Debug\Ex01_02.pdb
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_03\obj\Debug\Ex01_03.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_03\obj\Debug\Ex01_03.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_03\obj\Debug\Ex01_03.csproj.CopyComplete
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_03\obj\Debug\Ex01_03.exe
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_03\obj\Debug\Ex01_03.pdb

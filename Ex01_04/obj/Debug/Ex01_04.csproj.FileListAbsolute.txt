@@ -1,0 +1,6 @@
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_04\bin\Debug\Ex01_04.exe
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_04\bin\Debug\Ex01_04.pdb
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_04\obj\Debug\Ex01_04.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_04\obj\Debug\Ex01_04.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_04\obj\Debug\Ex01_04.exe
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_04\obj\Debug\Ex01_04.pdb

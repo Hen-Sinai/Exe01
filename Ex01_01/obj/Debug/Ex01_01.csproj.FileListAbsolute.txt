@@ -4,3 +4,9 @@ C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex
 C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_01\bin\Debug\Ex01_01.pdb
 C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_01\obj\Debug\Ex01_01.exe
 C:\Users\Einav\Desktop\school stuff\שנה ב\סמסטר ב\c#\New folder\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_01\obj\Debug\Ex01_01.pdb
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_01\bin\Debug\Ex01_01.exe
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_01\bin\Debug\Ex01_01.pdb
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_01\obj\Debug\Ex01_01.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_01\obj\Debug\Ex01_01.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_01\obj\Debug\Ex01_01.exe
+C:\Users\ASUS\Desktop\B22 Ex01 Einav 318674611 Hen 207002791\Ex01_01\obj\Debug\Ex01_01.pdb

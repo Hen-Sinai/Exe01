@@ -4,7 +4,7 @@ namespace Ex01_04
 {
     class Program
     {
-        static int s_StringLen = 8;
+        private static int s_StringLen = 8;
         static public void Main()
         {
             stringAnalyser();
@@ -13,10 +13,9 @@ namespace Ex01_04
         private static void stringAnalyser()
         {
             string inputStr;
-            int number;
             inputStr = getUserStringInput();
             printIsPolindrom(inputStr);
-            if (int.TryParse(inputStr, out number))
+            if (int.TryParse(inputStr, out int number))
             {
                 printIsDividedByThree(inputStr);
             }
@@ -25,7 +24,6 @@ namespace Ex01_04
                 lowercaseLetters(inputStr);
             }
         }
-
 
         private static string getUserStringInput()
         {
@@ -41,9 +39,9 @@ namespace Ex01_04
 
         private static bool validStringInput(string i_str)
         {
-            bool v_validStr, isStringContainDigit = false, isStringContainLetter = false, isStringContainSymbol = false;
-            int number;
-            v_validStr = int.TryParse(i_str, out number) && i_str.Length == s_StringLen;
+            bool v_validStr, isStringContainDigit = false,
+                 isStringContainLetter = false, isStringContainSymbol = false;
+            v_validStr = int.TryParse(i_str, out int number) && i_str.Length == s_StringLen;
             if (!v_validStr)
             {
                 isStringContainDigit = checkStringContainDigit(i_str);
@@ -58,10 +56,9 @@ namespace Ex01_04
         private static bool checkStringContainDigit(string i_str)
         {
             bool isCharDigit = false;
-            int number;
             for (int i = 0; i < i_str.Length && !isCharDigit; i++)
             {
-                isCharDigit = int.TryParse(i_str[i].ToString(), out number);
+                isCharDigit = int.TryParse(i_str[i].ToString(), out int number);
             }
 
             return isCharDigit;
@@ -72,7 +69,7 @@ namespace Ex01_04
             bool isCharLetter = false;
             for (int i = 0; i < i_str.Length && !isCharLetter; i++)
             {
-                isCharLetter = checkEnglishLetter(i_str[i]);
+                isCharLetter = Char.IsLetter(i_str[i]); 
             }
 
             return isCharLetter;
@@ -81,10 +78,10 @@ namespace Ex01_04
         private static bool checkStringContainSymbol(string i_str)
         {
             bool isCharSymbol = false;
-            int number;
             for (int i = 0; i < i_str.Length && !isCharSymbol; i++)
             {
-                isCharSymbol = !(checkEnglishLetter(i_str[i])) && !int.TryParse(i_str[i].ToString(), out number);
+                isCharSymbol = !(Char.IsLetter(i_str[i])) &&
+                    !int.TryParse(i_str[i].ToString(), out int number);
             }
 
             return isCharSymbol;
@@ -93,16 +90,18 @@ namespace Ex01_04
         private static bool checkPolindrom(string i_str, int i_margin)
         {
             bool isPolindrom = true;
-            if (i_str.Length - i_margin == 0)
+            int offset = 1;
+            if (i_str.Length - i_margin != 0)
             {
-                return isPolindrom;
-            }
-            if (i_str[0] != i_str[i_str.Length - (i_margin + 1)])
-            {
-                return !isPolindrom;
+                if (i_str[0] != i_str[i_str.Length - (i_margin + 1)])
+                {
+                    isPolindrom = !isPolindrom;
+                }
+
+                checkPolindrom(i_str.Substring(offset), i_margin + offset); ;
             }
 
-            return checkPolindrom(i_str.Substring(1), i_margin + 1); ;
+            return isPolindrom;
         }
 
         private static void printIsPolindrom(string i_str)
@@ -112,6 +111,7 @@ namespace Ex01_04
              "Is the number a polindrom: {0}", checkPolindrom(i_str, 0));
             Console.WriteLine(msg);
         }
+
         private static bool checkDividedByThree(string i_str)
         {
             int number;
@@ -129,11 +129,6 @@ namespace Ex01_04
         private static bool checkLowercase(char i_letter)
         {
             return i_letter == Char.ToLower(i_letter);
-        }
-
-        private static bool checkEnglishLetter(char i_letter)
-        {
-            return (i_letter >= 'A' && i_letter <= 'Z') || (i_letter >= 'a' && i_letter <= 'z');
         }
 
         private static int countLowercaseLetters(string i_str)

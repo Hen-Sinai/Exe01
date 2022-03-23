@@ -5,6 +5,8 @@ namespace Ex01_02
 {
    public class Program
     {
+        private static char s_Space = ' ';
+        private static char s_Star = '*';
         static void Main()
         {
             printHourGlass();
@@ -25,8 +27,8 @@ namespace Ex01_02
             }
             if (i_row < i_height / 2)
             {
-                msgSpace = new string(' ', i_row);
-                msgStar = new string('*', i_height - (2 * i_row));
+                msgSpace = new string(s_Space, i_row);
+                msgStar = new string(s_Star, i_height - (2 * i_row));
                 msg =
                     string.Format(
                         "{0}{1}",
@@ -35,8 +37,8 @@ namespace Ex01_02
             }
             else
             {
-                msgSpace = new string(' ', i_height - i_row - 1);
-                msgStar = new string('*', (2 * i_row) - i_height + 2);
+                msgSpace = new string(s_Space, i_height - i_row - 1);
+                msgStar = new string(s_Star, (2 * i_row) - i_height + 2);
                 msg =
                     string.Format(
                         "{0}{1}",
@@ -44,7 +46,6 @@ namespace Ex01_02
                 io_hourGlassStr.AppendLine(msg);
             }
             GenerateHourGlassWithInput(io_hourGlassStr, i_row + 1, i_height);
-
         }
     }
 }

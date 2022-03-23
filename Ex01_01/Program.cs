@@ -7,6 +7,7 @@ namespace Ex01_01
         Zero = '0',
         One = '1'
     }
+
     class Program
     {
         static int s_NumberOfSeries = 3;
@@ -19,7 +20,6 @@ namespace Ex01_01
 
         private static void binarySeries()
         {
-
             string[] binaryNumArry = getBinarySeriesInput();
             int[] decimalNumArry = parseStringArrToIntArr(binaryNumArry);
             avgDigitApperiences(binaryNumArry);
@@ -54,12 +54,13 @@ namespace Ex01_01
             v_VaildNumber = i_binaryNumber.Length == s_NumberLen;
             if (v_VaildNumber)
             {
-                for (int i = 0; i < s_NumberLen && v_VaildNumber; i++)
+                for (int i = 0; i < s_NumberLen; i++)
                 {
                     currentDigit = i_binaryNumber[i];
                     if (currentDigit != (char)eBinaryDigits.Zero && currentDigit != (char)eBinaryDigits.One)
                     {
                         v_VaildNumber = !v_VaildNumber;
+                        break;
                     }
                 }
             }
@@ -127,7 +128,7 @@ The average number of '1' digits in the binary number is {1}.",
                 }
             }
 
-            return (decNumber);
+            return decNumber;
         }
 
         private static int amountOfExpTwoNumbers(int[] i_decNumber)

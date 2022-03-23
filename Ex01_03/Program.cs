@@ -1,7 +1,5 @@
 ﻿using System;
-using Ex01_02;
 using System.Text;
-
 
 namespace Ex01_03
 {
@@ -11,27 +9,30 @@ namespace Ex01_03
         {
             advancedHourGlass();
         }
+
         private static bool validHourGlassInput(string i_height)
         {
-            bool v_validHeight;
+            bool validHeight;
             int number;
-            v_validHeight = int.TryParse(i_height, out number) && number > 0;
-            if(!v_validHeight)
+            validHeight = int.TryParse(i_height, out number) && number > 0;
+            if(!validHeight)
             {
                 Console.WriteLine("Wrong input, please enter another number");
             }
-            return v_validHeight;
+            return validHeight;
         }
+
         private static void advancedHourGlass()
         {
             int validHeight;
+            const int k_FirstLevel = 0;
             StringBuilder hourGlassStr = new StringBuilder();
             validHeight = getUserHeightInput();
-            if (validHeight % 2 ==0)
+            if (validHeight % 2 == 0)
             {
                 validHeight += 1;
             }
-            Ex01_02.Program.GenerateHourGlassWithInput(hourGlassStr, 0, validHeight);
+            Ex01_02.Program.GenerateHourGlassWithInput(hourGlassStr, k_FirstLevel, validHeight);
             Console.WriteLine(hourGlassStr);
         }
 
@@ -47,6 +48,5 @@ namespace Ex01_03
 
             return (int.Parse(inputHeight));
         }
-
     }
 }
